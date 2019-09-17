@@ -20,3 +20,5 @@ git push
 ### Credits
 
 Opgezet m.b.v. HTML5 Boilerplate.
+
+[PHP DB site](https://www.codeofaninja.com/2017/02/create-simple-rest-api-in-php.html)
