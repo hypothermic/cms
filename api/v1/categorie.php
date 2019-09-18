@@ -40,7 +40,12 @@ if ($num > 0) {
 
     // return categorieen
     http_response_code(200);
-    print(json_encode($result));
+    print(json_encode(
+        array(
+            "return" => "array",
+            "array"   => $result
+        )
+    ));
 
 } else {
 
@@ -48,6 +53,7 @@ if ($num > 0) {
     http_response_code(404);
     print(json_encode(
         array(
+            "return"  => "error",
             "error"   => "1",
             "message" => "No categories found."
         )
