@@ -4,26 +4,20 @@
 
 class Categorie extends DatabaseObject {
 
-    /** Interne ID, uniek voor elke categorie */
-    public $id;
+    public $StockGroupID;
+    public $StockGroupName;
 
-    /** URL Key,             ex.: "tablets-en-smartphones" */
-    public $key;
-    /** User-Friendly naam,  ex.: "Tablets en Smartphones" */
-    public $name;
-
-    /** Is actief/zichtbaar? TRUE/FALSE */
-    public $active;
-    /** Wordt nog niet gebruikt */
-    public $mode;
+    public $LastEditedBy;
+    public $ValidFrom;
+    public $ValidTo;
 
     public function __construct($db) {
-        parent::__construct($db, "Categorie");
+        parent::__construct($db, "stockgroups");
     }
 
     public function read() {
         $query = "SELECT
-                      c.id, c.key, c.name, c.active, c.mode
+                      c.StockGroupID, c.StockGroupName, c.LastEditedBy, c.ValidFrom, C.ValidTo
                   FROM
                       " . $this->table_name . " c";
 

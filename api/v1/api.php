@@ -7,7 +7,7 @@ http_response_code(200);
 
 $client = array(
     "name" => "Wide World Importers",
-    "logo" => "img/logo/"
+    "logo" => "img/logo/small-250x90.png"
 );
 
 $result = array(

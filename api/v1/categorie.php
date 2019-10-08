@@ -21,18 +21,18 @@ $num = $stmt->rowCount();
 // >1 categorie gevonden in database
 if ($num > 0) {
 
-    $result = array();
+    $result = array("record_name" => "categories");
     $result["records"] = array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
         $item = array(
-            "id"     => $id,
-            "key"    => $key,
-            "name "  => $name,
-            "active" => $active,
-            "mode"   => $mode,
+            "id"           => $StockGroupID,
+            "name"         => $StockGroupName,
+            "last_edited"  => $LastEditedBy,
+            "valid_from"   => $ValidFrom,
+            "valid_to"     => $ValidTo
         );
 
         array_push($result["records"], $item);
@@ -47,9 +47,9 @@ if ($num > 0) {
         )
     ));
 
+// geen categorieeen gevonden, error.
 } else {
 
-    // geen categorieen gevonden, error
     http_response_code(404);
     print(json_encode(
         array(

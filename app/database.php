@@ -3,11 +3,11 @@
 // TODO maak singleton?? https://stackoverflow.com/a/37800033/9107324
 class Database {
 
-    private $host = "localhost";
-    private $database = "cms";
+    private const HOST = "localhost";
+    private const DATABASE = "wideworldimporters";
 
-    private $username = "api-local";
-    private $password = "";
+    private const USERNAME = "api-local";
+    private const PASSWORD = "";
 
     private $connection;
 
@@ -15,7 +15,7 @@ class Database {
         $this->connection = null;
 
         try {
-            $this->connection = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->database, $this->username, $this->password);
+            $this->connection = new PDO("mysql:host=" . Database::HOST . ";dbname=" . Database::DATABASE, Database::USERNAME, Database::PASSWORD);
             $this->connection->exec("set names utf8");
         } catch (PDOException $exception) {
             error_log("Connection error: " . $exception->getMessage());
