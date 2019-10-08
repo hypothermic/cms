@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Database class">
-      <change afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/logo/small-250x90.png" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/v1/product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/v1/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,12 +48,13 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img/logo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
@@ -96,7 +93,8 @@
       <updated>1568735999157</updated>
       <workItem from="1568736001446" duration="10885000" />
       <workItem from="1568803787256" duration="1697000" />
-      <workItem from="1570545929068" duration="1583000" />
+      <workItem from="1570545929068" duration="3135000" />
+      <workItem from="1570549094805" duration="247000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -119,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568805480201</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Use worldwideimporters database">
+      <created>1570547540409</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570547540410</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +147,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Database class" />
     <MESSAGE value="Set return type in json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set return type in json" />
+    <MESSAGE value="Use worldwideimporters database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use worldwideimporters database" />
   </component>
 </project>

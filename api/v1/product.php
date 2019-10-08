@@ -2,7 +2,7 @@
 
 include_once '../../app/database.php';
 include_once '../../app/databaseobject.php';
-include_once '../../app/model/categorie.php';
+include_once '../../app/model/product.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -12,27 +12,32 @@ $database = new Database();
 $db = $database->getConnection();
 
 // initialize object
-$categorie = new Categorie($db);
+$product = new Product($db);
+
+// laat user aantal producten bepalen // TODO limit met api key ???
+$limit = 20;
+if (isset($_GET["limit"])) {
+    $limit = (int) $_GET["limit"];
+}
 
 // mysql query
-$stmt = $categorie->read();
+$stmt = $product->readWithLimit($limit);
 $num = $stmt->rowCount();
 
 // >1 categorie gevonden in database
 if ($num > 0) {
 
-    $result = array("record_name" => "categorie");
+    $result = array("record_name" => "product");
     $result["records"] = array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
+        // TODO join database and show supplier info i.p.v. id
         $item = array(
-            "id"           => $StockGroupID,
-            "name"         => $StockGroupName,
-            "last_edited"  => $LastEditedBy,
-            "valid_from"   => $ValidFrom,
-            "valid_to"     => $ValidTo
+            "id"           => $StockItemID,
+            "name"         => $StockItemName,
+            "supplier_id"  => $SupplierID,
         );
 
         array_push($result["records"], $item);
@@ -55,7 +60,7 @@ if ($num > 0) {
         array(
             "return"  => "error",
             "error"   => "1",
-            "message" => "No categories found."
+            "message" => "No products found."
         )
     ));
 }
