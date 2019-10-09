@@ -1,0 +1,3 @@
+<?php
+
+const DEFAULT_PRODUCT_RETURN_AMOUNT = 20;

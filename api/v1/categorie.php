@@ -1,5 +1,7 @@
 <?php
 
+include_once '../../app/common.php';
+include_once '../../app/constants.php';
 include_once '../../app/database.php';
 include_once '../../app/databaseobject.php';
 include_once '../../app/model/categorie.php';
@@ -11,6 +13,10 @@ header("Content-Type: application/json; charset=UTF-8");
 $database = new Database();
 $db = $database->getConnection();
 
+if (is_null($db)) {
+    respond_error(503, "Error connecting with database.");
+}
+
 // initialize object
 $categorie = new Categorie($db);
 
@@ -18,7 +24,7 @@ $categorie = new Categorie($db);
 $stmt = $categorie->read();
 $num = $stmt->rowCount();
 
-// >1 categorie gevonden in database
+// 1 of meer categorieeen gevonden in database
 if ($num > 0) {
 
     $result = array("record_name" => "categorie");
@@ -39,25 +45,11 @@ if ($num > 0) {
     }
 
     // return categorieen
-    http_response_code(200);
-    print(json_encode(
-        array(
-            "return" => "array",
-            "array"   => $result
-        )
-    ));
+    respond_array(200, $result);
 
 // geen categorieeen gevonden, error.
 } else {
-
-    http_response_code(404);
-    print(json_encode(
-        array(
-            "return"  => "error",
-            "error"   => "1",
-            "message" => "No categories found."
-        )
-    ));
+    respond_error(404, "No categories found.");
 }
 
 ?>
