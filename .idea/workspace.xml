@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/docs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie/get.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/docs.md" beforeDir="false" afterPath="$PROJECT_DIR$/api/docs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/product/get.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

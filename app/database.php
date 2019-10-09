@@ -17,6 +17,7 @@ class Database {
         try {
             $this->connection = new PDO("mysql:host=" . Database::HOST . ";dbname=" . Database::DATABASE, Database::USERNAME, Database::PASSWORD);
             $this->connection->exec("set names utf8");
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $exception) {
             error_log("Connection error: " . $exception->getMessage());
         }
