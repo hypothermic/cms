@@ -1,10 +1,10 @@
 <?php
 
-include_once '../../app/common.php';
-include_once '../../app/constants.php';
-include_once '../../app/database.php';
-include_once '../../app/databaseobject.php';
-include_once '../../app/model/product.php';
+include_once '../../../app/common.php';
+include_once '../../../app/constants.php';
+include_once '../../../app/database.php';
+include_once '../../../app/databaseobject.php';
+include_once '../../../app/model/product.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

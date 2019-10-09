@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/common.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/docs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product/get.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,11 +48,16 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1/product" />
+      <recent name="$PROJECT_DIR$/api/v1/categorie" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
@@ -124,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570547540410</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Return error if database is offline, create methods for returning data, create constants file">
+      <created>1570621058409</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570621058409</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,10 +156,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Database class" />
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use worldwideimporters database" />
+    <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Return error if database is offline, create methods for returning data, create constants file" />
   </component>
 </project>
