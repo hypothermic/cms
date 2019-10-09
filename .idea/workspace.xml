@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Meer documentatie + debugging mode voor pdo exceptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/docs.md" beforeDir="false" afterPath="$PROJECT_DIR$/api/docs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/product/get.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/categorie/get.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/categorie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570621058409</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update product endpoint to return all relevant attributes">
+      <created>1570641603232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570641603232</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +172,7 @@
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
     <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Return error if database is offline, create methods for returning data, create constants file" />
+    <MESSAGE value="Update product endpoint to return all relevant attributes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update product endpoint to return all relevant attributes" />
   </component>
 </project>

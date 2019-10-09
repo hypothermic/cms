@@ -18,29 +18,29 @@ Voorbeeld request:
 Voorbeeld response:
 
 ```json
-{
+{ 
     "return": "array",
-    "array": {
+    "array":{ 
         "record_name": "categorie",
-        "records": [
-            {
+        "records":[ 
+            { 
                 "id": "1",
-                "name": "Novelty Items",
-                "last_edited": "1",
-                "valid_from": "2013-01-01 00:00:00",
-                "valid_to": "9999-12-31 23:59:59"
+                "name": "Novelty Items"
             },
-            {
+            { 
                 "id": "2",
-                "name": "Clothing",
-                "last_edited": "1",
-                "valid_from": "2013-01-01 00:00:00",
-                "valid_to": "9999-12-31 23:59:59"
+                "name": "Clothing"
+            },
+            { 
+                "id": "10",
+                "name": "Packaging Materials"
             }
         ]
     }
 }
 ```
+
+_Zie de comments in [categorie.php](/app/model/categorie.php) voor meer informatie over de attributen._
 
 ## Producten
 
@@ -115,6 +115,8 @@ Voorbeeld response:
     }
 }
 ```
+
+_Zie de comments in [product.php](/app/model/product.php) voor meer informatie over de attributen._
 
 ## API Info
 

@@ -4,32 +4,56 @@
 
 class Product extends DatabaseObject {
 
+    /** Interne ID van dit product*/
     public $StockItemID;
+    /** Naam van dit product*/
     public $StockItemName;
 
+    /** Naam van de leverancier */
     public $SupplierName;
 
+    /** Kleur van dit product (Black, Red, Blue, etc.) */
     public $ColorName;
 
+    /** Verpakking om elk product (plastic folie, bubbeltjesplastic, etc.)*/
     public $UnitPackageTypeName;
+    /** Buitenverpakking (kartonnen doos, pellet, etc.)*/
     public $OuterPackageTypeName;
 
+    /** Merk van dit product, kan leeg zijn of NULL zijn */
     public $Brand;
+    /** Fysieke grootte van het product (100mm, 20cm, etc.) */
     public $Size;
+    /** Hoeveel dagen voordat het leverbaar is */
     public $LeadTimeDays;
+    /** Hoeveel producten kunnen er in een outer package? Zie $OuterPackageTypeName */
     public $QuantityPerOuter;
+    /** Of het product in de diepvries ligt */
     public $IsChillerStock;
+    /** Barcode voor dit product */
     public $Barcode;
+
+    /** Aantal belasting (in procenten) dat moet worden toegevoegd */
     public $TaxRate;
+    /** Verkoopprijs aan leveranciers van dit product (excl. belasting)*/
     public $UnitPrice;
+    /** Verkoopprijs aan klanten van dit product (incl. belasting)*/
     public $RecommendedRetailPrice;
+
+    /** Gewicht per product (incl. verpakking)*/
     public $TypicalWeightPerUnit;
+    /** Marketing opmerkingen over dit product (wordt gedeeld buiten de organisatie) */
     public $MarketingComments;
+    /** Interne opmerkingen over dit product (wordt niet gedeeld buiten de organisatie) */
     protected $InternalComments;
+    /** Foto van dit product*/
     public $Photo;
+    /** JSON met custom fields */
     public $CustomFields;
+    /** Advertising tags voor dit product (zitten ook in customfields) */
     public $Tags;
     protected $SearchDetails;
+
     protected $LastEditedBy;
     protected $ValidFrom;
     protected $ValidTo;

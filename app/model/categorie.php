@@ -4,12 +4,14 @@
 
 class Categorie extends DatabaseObject {
 
+    /** Interne ID van deze categorie */
     public $StockGroupID;
+    /** Naam van deze categorie */
     public $StockGroupName;
 
-    public $LastEditedBy;
-    public $ValidFrom;
-    public $ValidTo;
+    protected $LastEditedBy;
+    protected $ValidFrom;
+    protected $ValidTo;
 
     public function __construct($db) {
         parent::__construct($db, "stockgroups");
