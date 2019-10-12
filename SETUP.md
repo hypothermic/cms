@@ -42,13 +42,14 @@ In apache2.conf, add or replace the following lines:
 <Directory /opt/fear/www/>
         Options Indexes FollowSymLinks
         AllowOverride All
-        Require all allowed
+        Require all granted
 </Directory>
 
 AccessFileName .htaccess
 ```
 
 Modify your VirtualHost to point to the proper document root:
+
 ```apacheconfig
 <VirtualHost ...>
     ...

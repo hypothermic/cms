@@ -2,11 +2,11 @@
 
 class DatabaseObject {
 
-    protected $conn;
+    protected $connection;
     protected $table_name;
 
     public function __construct($db, $table_name) {
-        $this->conn = $db;
+        $this->connection = $db;
         $this->table_name = $table_name;
     }
 }

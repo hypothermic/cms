@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2019 Daan Bakema, Matthijs Bakker, Ronald Bijsma, Jeroen Stek, Job Vulkers
+Copyright (c) 2019 Hypothermic IT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

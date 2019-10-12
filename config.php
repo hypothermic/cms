@@ -11,12 +11,14 @@
  */
 
 // --- Vendor
-const CLIENT_NAME = "Sample Shop";
+const CLIENT_NAME       = "Sample Shop";
 
 
 // --- Database
-const DATABASE_HOST = "localhost",
-      DATABASE_NAME = "fear";
+const DATABASE_HOST     = "localhost",
+      DATABASE_NAME     = "fear",
+      DATABASE_USERNAME = "fear-api",
+      DATABASE_PASSWORD = "change_me!";
 
 
 ?>

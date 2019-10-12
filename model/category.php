@@ -2,23 +2,23 @@
 
 include_once "../fear/databaseobject.php";
 
-class Categorie extends DatabaseObject {
+class Category extends DatabaseObject {
 
-    /** Interne ID, uniek voor elke categorie */
+    /** Internal ID, unique for each category */
     public $id;
 
-    /** URL Key,             ex.: "tablets-en-smartphones" */
+    /** URL Key,             ex.: "tablets-and-smartphones" */
     public $key;
-    /** User-Friendly naam,  ex.: "Tablets en Smartphones" */
+    /** User-Friendly name,  ex.: "Tablets and Smartphones" */
     public $name;
 
-    /** Is actief/zichtbaar? TRUE/FALSE */
+    /** Is active/visible? TRUE/FALSE */
     public $active;
-    /** Wordt nog niet gebruikt */
+    /** Not used yet. */
     public $mode;
 
     public function __construct($db) {
-        parent::__construct($db, "Categorie");
+        parent::__construct($db, "Category");
     }
 
     public function read() {
@@ -27,7 +27,7 @@ class Categorie extends DatabaseObject {
                   FROM
                       " . $this->table_name . " c";
 
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->connection->prepare($query);
         $stmt->execute();
 
         return $stmt;
