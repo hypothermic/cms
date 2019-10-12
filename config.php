@@ -6,13 +6,13 @@
  * Please keep this file secret as it might contain sensitive information.
  *
  * This file is seperated into the following categories:
- * - vendor
+ * - environment
  * - database
  */
 
-// --- Vendor
+// --- Environment
 const CLIENT_NAME       = "Sample Shop";
-
+const DEBUG_ENABLED     = TRUE;
 
 // --- Database
 const DATABASE_HOST     = "localhost",

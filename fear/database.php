@@ -1,7 +1,5 @@
 <?php
 
-include_once "../config.php";
-
 // TODO make singleton?? https://stackoverflow.com/a/37800033/9107324
 class Database {
 
@@ -15,6 +13,10 @@ class Database {
             $this->connection->exec("set names utf8");
         } catch (PDOException $exception) {
             error_log("Connection error: " . $exception->getMessage());
+        }
+
+        if (DEBUG_ENABLED && $this->connection != null) {
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
 
         return $this->connection;

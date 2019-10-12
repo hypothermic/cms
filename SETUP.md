@@ -58,6 +58,14 @@ Modify your VirtualHost to point to the proper document root:
 </VirtualHost>
 ```
 
+Geef Apache de juiste permissies voor de web root.
+
+```shell script
+groupadd fear-www
+chown -R root:fear-www /opt/fear/www/
+chmod -R 2775 /opt/fear/www/
+```
+
 ## 3. Prepare database
 
 If you have created the database already, skip this step.
@@ -68,3 +76,5 @@ Make sure to create a backup of important databases before running the command.
 ```shell script
 sudo mysql < /opt/fear/db/create.sql
 ```
+
+You may have to enable case-insensitive table names if you're on an Unix-based operating system.
