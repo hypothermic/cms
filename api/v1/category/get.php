@@ -1,8 +1,8 @@
 <?php
 
-include_once '../../app/database.php';
-include_once '../../app/databaseobject.php';
-include_once '../../app/model/categorie.php';
+include_once '../../../fear/database.php';
+include_once '../../../fear/databaseobject.php';
+include_once '../../../model/categorie.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

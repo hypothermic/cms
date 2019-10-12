@@ -2,10 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Database class">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/www/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fear.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/category/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/SETUP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/fear/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/databaseobject.php" beforeDir="false" afterPath="$PROJECT_DIR$/fear/databaseobject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/www/browserconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/www/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/humans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/www/humans.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/www/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/fear/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/img/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/plugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vendor/jquery-3.4.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/vendor/jquery-3.4.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vendor/modernizr-3.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/vendor/modernizr-3.7.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/www/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/www/site.webmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tile-wide.png" beforeDir="false" afterPath="$PROJECT_DIR$/www/tile-wide.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/www/tile.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +75,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
@@ -54,6 +83,11 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/api/v1/category" />
+      <recent name="$PROJECT_DIR$/www" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -69,7 +103,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
+    <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/fear/database.php">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -90,6 +124,8 @@
       <updated>1568735999157</updated>
       <workItem from="1568736001446" duration="10885000" />
       <workItem from="1568803787256" duration="1697000" />
+      <workItem from="1570903762669" duration="270000" />
+      <workItem from="1570904033667" duration="89000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -123,7 +159,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

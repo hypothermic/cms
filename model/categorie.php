@@ -1,6 +1,6 @@
 <?php
 
-//include_once "../databaseobject.php";
+include_once "../fear/databaseobject.php";
 
 class Categorie extends DatabaseObject {
 
