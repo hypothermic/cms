@@ -1,7 +1,7 @@
 <?php
 
 namespace Fear\Model;
-class Category extends \Fear\Core\DatabaseObject {
+class Category extends \Fear\Core\AttributeObject {
 
     public const TABLE_NAME = "Category";
 

@@ -1,7 +1,6 @@
 <?php
 
 namespace Fear\Core;
-
 class DatabaseObject {
 
     protected $connection;
