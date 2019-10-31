@@ -40,11 +40,28 @@ if ($num > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
-        // TODO join supplier table and show supplier info i.p.v. id
+        // Protected fields (alleen voor intern gebruik) worden NIET vrijgegeven hieronder:
         $item = array(
-            "id"           => $StockItemID,
-            "name"         => $StockItemName,
-            "supplier_id"  => $SupplierID,
+            "id"                 => $StockItemID,
+            "name"               => $StockItemName,
+            "supplier"           => $SupplierName,
+            "color"              => $ColorName,
+            "package_unit"       => $UnitPackageTypeName,
+            "package_outer"      => $OuterPackageTypeName,
+            "qty_per_outer"      => $QuantityPerOuter,
+            "brand"              => $Brand,
+            "size"               => $Size,
+            "lead_time"          => $LeadTimeDays,
+            "is_chill"           => $IsChillerStock,
+            "barcode"            => $Barcode,
+            "tax"                => $TaxRate,
+            "price_unit"         => $UnitPrice,
+            "price_recommended"  => $RecommendedRetailPrice,
+            "weight"             => $TypicalWeightPerUnit,
+            "comments_marketing" => $MarketingComments,
+            "photo"              => $Photo,
+            "custom_fields"      => $CustomFields,
+            "tags"               => $Tags,
         );
 
         array_push($result["records"], $item);

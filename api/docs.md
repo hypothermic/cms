@@ -18,29 +18,29 @@ Voorbeeld request:
 Voorbeeld response:
 
 ```json
-{
+{ 
     "return": "array",
-    "array": {
+    "array":{ 
         "record_name": "categorie",
-        "records": [
-            {
+        "records":[ 
+            { 
                 "id": "1",
-                "name": "Novelty Items",
-                "last_edited": "1",
-                "valid_from": "2013-01-01 00:00:00",
-                "valid_to": "9999-12-31 23:59:59"
+                "name": "Novelty Items"
             },
-            {
+            { 
                 "id": "2",
-                "name": "Clothing",
-                "last_edited": "1",
-                "valid_from": "2013-01-01 00:00:00",
-                "valid_to": "9999-12-31 23:59:59"
+                "name": "Clothing"
+            },
+            { 
+                "id": "10",
+                "name": "Packaging Materials"
             }
         ]
     }
 }
 ```
+
+_Zie de comments in [categorie.php](/app/model/categorie.php) voor meer informatie over de attributen._
 
 ## Producten
 
@@ -63,24 +63,60 @@ Voorbeeld response:
 
 ```json
 {
-    "return": "array",
-    "array": {
-        "record_name": "product",
-        "records": [
+    "return":"array",
+    "array":{
+        "record_name":"product",
+        "records":[
             {
-                "id": "1",
-                "name": "USB missile launcher (Green)",
-                "supplier_id": "12"
+                "id":"75",
+                "name":"Ride on big wheel monster truck",
+                "supplier":"Northwind Electric Cars",
+                "color":"Black",
+                "package_unit":"Each",
+                "package_outer":"Each",
+                "qty_per_outer":"1",
+                "brand":"Northwind",
+                "size":"1\/12 scale",
+                "lead_time":"14",
+                "is_chill":"0",
+                "barcode":"",
+                "tax":"15.000",
+                "price_unit":"345.00",
+                "price_recommended":"515.78",
+                "weight":"21.000",
+                "comments_marketing":"Suits child to 20 kg",
+                "photo":"",
+                "custom_fields":"{ \"CountryOfManufacture\": \"China\", \"Tags\": [\"So Realistic\"] }",
+                "tags":"[\"So Realistic\"]"
             },
             {
-                "id": "2",
-                "name": "USB rocket launcher (Gray)",
-                "supplier_id": "12"
+                "id":"73",
+                "name":"Ride on vintage American toy coupe",
+                "supplier":"Northwind Electric Cars",
+                "color":"Red",
+                "package_unit":"Each",
+                "package_outer":"Each",
+                "qty_per_outer":"1",
+                "brand":"Northwind",
+                "size":"1\/12 scale",
+                "lead_time":"14",
+                "is_chill":"0",
+                "barcode":"",
+                "tax":"15.000",
+                "price_unit":"285.00",
+                "price_recommended":"426.08",
+                "weight":"18.000",
+                "comments_marketing":"Suits child to 20 kg",
+                "photo":"",
+                "custom_fields":"{ \"CountryOfManufacture\": \"China\", \"Tags\": [\"Vintage\",\"So Realistic\"] }",
+                "tags":"[\"Vintage\",\"So Realistic\"]"
             }
         ]
     }
 }
 ```
+
+_Zie de comments in [product.php](/app/model/product.php) voor meer informatie over de attributen._
 
 ## API Info
 

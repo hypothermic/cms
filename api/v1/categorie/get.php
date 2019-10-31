@@ -33,12 +33,13 @@ if ($num > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
+        // Protected fields (alleen voor intern gebruik) worden NIET vrijgegeven hieronder (zie commented regels):
         $item = array(
             "id"           => $StockGroupID,
             "name"         => $StockGroupName,
-            "last_edited"  => $LastEditedBy,
-            "valid_from"   => $ValidFrom,
-            "valid_to"     => $ValidTo
+            //"last_edited"  => $LastEditedBy,
+            //"valid_from"   => $ValidFrom,
+            //"valid_to"     => $ValidTo
         );
 
         array_push($result["records"], $item);

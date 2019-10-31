@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/vendor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/docs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product/get.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,9 +100,6 @@
       <workItem from="1568803787256" duration="1697000" />
       <workItem from="1570545929068" duration="3135000" />
       <workItem from="1570549094805" duration="247000" />
-      <workItem from="1570696405017" duration="1229000" />
-      <workItem from="1572511776865" duration="707000" />
-      <workItem from="1572524536319" duration="1353000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -137,14 +136,7 @@
       <option name="project" value="LOCAL" />
       <updated>1570621058409</updated>
     </task>
-    <task id="LOCAL-00006" summary="Verplaats endpoints naar correcte locatie en maak documentatie">
-      <created>1570623381008</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1570623381008</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +163,6 @@
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
     <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
-    <MESSAGE value="Verplaats endpoints naar correcte locatie en maak documentatie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verplaats endpoints naar correcte locatie en maak documentatie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Return error if database is offline, create methods for returning data, create constants file" />
   </component>
 </project>

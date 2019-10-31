@@ -1,5 +1,7 @@
 <?php
 
+include_once "constants.php";
+
 // TODO maak singleton?? https://stackoverflow.com/a/37800033/9107324
 class Database {
 
@@ -19,6 +21,10 @@ class Database {
             $this->connection->exec("set names utf8");
         } catch (PDOException $exception) {
             error_log("Connection error: " . $exception->getMessage());
+        }
+
+        if (IS_DEBUGGING_ENABLED) {
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
 
         return $this->connection;
