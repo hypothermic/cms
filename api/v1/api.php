@@ -1,12 +1,14 @@
 <?php
 
+include_once '../../app/vendor.php';
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 http_response_code(200);
 
 $client = array(
-    "name" => "Wide World Importers",
+    "name" => VENDOR_NAME,
     "logo" => "img/logo/small-250x90.png"
 );
 
