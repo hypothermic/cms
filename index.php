@@ -1,4 +1,5 @@
 <?
+// Uit deze php bestanden gebruiken wij functies of variabelen.
 include_once("app/vendor.php");
 ?>
 
@@ -16,8 +17,8 @@ include_once("app/vendor.php");
         <link rel="apple-touch-icon" href="icon.png">
 
         <!-- Normalize hebben we nodig voor het schoonmaken van pagina zodat het er in alle browsers hetzelfde uit ziet -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css.php">
 
 
         <!-- Alle JavaScript dependencies-->
@@ -37,9 +38,16 @@ include_once("app/vendor.php");
         <![endif]-->
 
         <!-- Binnen deze tags komt de inhoud van deze webpagina. -->
-        <div>
+        <div class="root-container">
+            <!-- Navigatie menu //TODO maak dit een template en include met php -->
+            <div id="navigatie" class="fixed-top">
+                
+            </div>
 
+            <!-- Inhoud pagina -->
+            <div class="">
+
+            </div>
         </div>
-
     </body>
 </html>
