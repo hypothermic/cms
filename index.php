@@ -55,9 +55,11 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                 <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
                 <div id="navigatie-site">
                     <div id="navigatie-site-container" class="responsive-container">
-                        <div><a href="">Winkelmandje</a></div>
-                        <div><a href="">Inloggen</a></div>
-                        <div><a href="">Registreren</a></div>
+                        <a href="index.php"><div>Home</div></a>
+                        <a href="index.php" class="flex-center" style="color: red"><div>Moet hier de zoekbalk ofzo?</div></a>
+                        <a href="winkelmand.php" class="flex-push"><div>Winkelmandje</div></a>
+                        <a href="inloggen.php"><div>Inloggen</div></a>
+                        <a href="registreren.php"><div>Registreren</div></a>
                     </div>
                 </div>
 
@@ -69,7 +71,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         extract($row);
                         // Print een HTML element met de naam en een link naar de pagina
-                        printf("<div><a href=\"categorie.php?id=%s\">%s</a></div>", $StockGroupID, $StockGroupName);
+                        printf("<a href=\"categorie.php?id=%s\"><div>%s</div></a>", $StockGroupID, $StockGroupName);
                     }
                     ?>
                 </div>

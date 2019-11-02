@@ -29,8 +29,8 @@ include_once "../app/vendor.php";
 #navigatie-site-container {
     display: flex;
     display: -webkit-flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 /* Dit zijn de individuele elementen binnen de navigatiebalk */
@@ -49,6 +49,8 @@ include_once "../app/vendor.php";
 }
 
 #navigatie-site-container a {
+    height: 100%;
+
     color: <?php echo VENDOR_THEME_COLOR_TEXT_NORMAL ?>;
     text-align: center;
     text-decoration: none;
@@ -79,8 +81,11 @@ include_once "../app/vendor.php";
     display: -webkit-flex;
     justify-content: center;
     align-items: center;
+
     padding: 0.7rem 1.6rem;
+
     height: 100%;
+
     float: left;
 }
 
@@ -93,6 +98,8 @@ include_once "../app/vendor.php";
 }*/
 
 #navigatie-categorieen a {
+    height: 100%;
+
     color: <?php echo VENDOR_THEME_COLOR_TEXT_NORMAL ?>;
     text-align: center;
     text-decoration: none;
@@ -157,4 +164,14 @@ include_once "../app/vendor.php";
     text-align: center;
     font-size: 1.35rem;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Zorgt dat flexbox items naar rechts worden gezet als justify-content start is.*/
+.flex-push {
+    margin-left: auto;
+}
+/* Net zoals flex-push alleen worden items op 50% gezet.*/
+.flex-center {
+    margin-left: auto;
+    margin-right: auto;
 }
