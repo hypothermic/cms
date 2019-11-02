@@ -52,11 +52,17 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     </div>
                 </div>
 
-                <!-- Navigatie balk -->
-                <div id="navigatie">
-                    <a href="categorie.php?id=">Home</a>
-                    <a href="#news">News</a>
-                    <a href="#contact">Contact</a>
+                <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
+                <div id="navigatie-site">
+                    <div id="navigatie-site-container" class="responsive-container">
+                        <div><a href="">Winkelmandje</a></div>
+                        <div><a href="">Inloggen</a></div>
+                        <div><a href="">Registreren</a></div>
+                    </div>
+                </div>
+
+                <!-- Navigatie balk met categorieen -->
+                <div id="navigatie-categorieen">
                     <?php
                     // Verkrijg categorieen uit database
                     $stmt = (new Categorie((new Database())->getConnection()))->read();

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return offsetTop;
     };
 
-    const navigatiebalk = document.getElementById("navigatie");
+    const navigatiebalk = document.getElementById("navigatie-categorieen");
     const standaardOffset = getOffsetTop(navigatiebalk);
 
     /**
