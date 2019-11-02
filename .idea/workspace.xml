@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Maak een template van de header zodat we hem kunnen hergebruiken">
+      <change afterPath="$PROJECT_DIR$/PROJECT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpl/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +101,7 @@
       <workItem from="1568803787256" duration="1697000" />
       <workItem from="1570545929068" duration="3135000" />
       <workItem from="1570549094805" duration="247000" />
-      <workItem from="1572620841952" duration="14743000" />
+      <workItem from="1572620841952" duration="18254000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -164,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572716601119</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Push flexbox items in navigatie-site naar correcte plaats">
+      <created>1572717633105</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572717633105</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +204,7 @@
     <MESSAGE value="Update endpoint api-info to use constants defined in vendor.php" />
     <MESSAGE value="Laad navigatiebalk met categorieen uit vanuit database" />
     <MESSAGE value="Bovenste navigatiebalk" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bovenste navigatiebalk" />
+    <MESSAGE value="Push flexbox items in navigatie-site naar correcte plaats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push flexbox items in navigatie-site naar correcte plaats" />
   </component>
 </project>

@@ -39,47 +39,16 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
             <div id="warning" class="fixed-top"><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience and security.</p></div>
         <![endif]-->
 
-        <!-- Binnen deze tags komt de inhoud van deze webpagina. -->
-        <div class="root-container">
+        <!-- Hierin  -->
+        <div id="pagina-container">
 
-            <!-- Header menu -->
-            <div id="header">
-
-                <!-- Dit gedeelte van de header komt in een lijn te staan met de body content -->
-                <div id="header-inline" class="responsive-container">
-                    <div id="promotie">
-                        <img src="img/logo/small-250x90.png" alt="Logo">
-                    </div>
-                </div>
-
-                <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
-                <div id="navigatie-site">
-                    <div id="navigatie-site-container" class="responsive-container">
-                        <a href="index.php"><div>Home</div></a>
-                        <a href="index.php" class="flex-center" style="color: red"><div>Moet hier de zoekbalk ofzo?</div></a>
-                        <a href="winkelmand.php" class="flex-push"><div>Winkelmandje</div></a>
-                        <a href="inloggen.php"><div>Inloggen</div></a>
-                        <a href="registreren.php"><div>Registreren</div></a>
-                    </div>
-                </div>
-
-                <!-- Navigatie balk met categorieen -->
-                <div id="navigatie-categorieen">
-                    <?php
-                    // Verkrijg categorieen uit database
-                    $stmt = (new Categorie((new Database())->getConnection()))->read();
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        extract($row);
-                        // Print een HTML element met de naam en een link naar de pagina
-                        printf("<a href=\"categorie.php?id=%s\"><div>%s</div></a>", $StockGroupID, $StockGroupName);
-                    }
-                    ?>
-                </div>
-
-            </div>
+            <!-- Print de header (logo, navigatiebalken, etc.)-->
+            <?php
+                include("tpl/header_template.php");
+            ?>
 
             <!-- Inhoud pagina -->
-            <div class="content">
+            <div class="content-container">
 
                 <?php
 
