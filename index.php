@@ -2,7 +2,6 @@
 // Uit deze php bestanden gebruiken wij functies of variabelen:
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
-include_once("app/databaseobject.php");  // wordt gebruikt voor object-oriented database programmeren
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 ?>
 

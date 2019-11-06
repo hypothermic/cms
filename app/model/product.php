@@ -1,8 +1,45 @@
 <?php
 
-//include_once "../databaseobject.php";
+include_once '../constants.php';
 
-class Product extends DatabaseObject {
+class Product {
+
+    public const TABLE_NAME = "stockitems";
+
+    /**
+     * Leest alle producten uit de database.
+     *
+     * @param PDO $database
+     * @param int $limit Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     * @return PDOStatement
+     */
+    public static function read($database, $limit = 1000) {
+        // Als limiet geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
+        if (filter_var($limit, FILTER_VALIDATE_INT) === false
+            || $limit < MIN_PRODUCT_RETURN_AMOUNT
+            || $limit > MAX_PRODUCT_RETURN_AMOUNT) {
+
+            $limit = DEFAULT_PRODUCT_RETURN_AMOUNT;
+        }
+
+        $query = "SELECT
+                      p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
+                      p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
+                      p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
+                      p.LastEditedBy, p.ValidFrom, p.ValidTo
+                  FROM
+                      " . self::TABLE_NAME . " p
+                  JOIN suppliers s ON p.SupplierID = s.SupplierID
+                  JOIN colors c ON p.ColorID = c.ColorID
+                  JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
+                  JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  LIMIT $limit";
+
+        $stmt = $database->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
 
     /** Interne ID van dit product*/
     public $StockItemID;
@@ -58,51 +95,8 @@ class Product extends DatabaseObject {
     protected $ValidFrom;
     protected $ValidTo;
 
-    public function __construct($db) {
-        parent::__construct($db, "stockitems");
-    }
+    public function __construct() {
 
-    public function readAll() {
-        $query = "SELECT
-                      p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
-                      p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
-                      p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
-                      p.LastEditedBy, p.ValidFrom, p.ValidTo
-                  FROM
-                      " . $this->table_name . " p
-                  JOIN suppliers s    ON p.SupplierID     = s.SupplierID
-                  JOIN colors c       ON p.ColorID        = c.ColorID
-                  JOIN packagetypes u ON p.UnitPackageID  = u.PackageTypeID
-                  JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID";
-
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-
-        return $stmt;
-    }
-
-    public function readWithLimit($limit) {
-        if (!is_int($limit) || $limit < 1) {
-            throw new \mysql_xdevapi\Exception("Limit must be a valid integer larger than 0.");
-        }
-
-        $query = "SELECT
-                      p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
-                      p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
-                      p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
-                      p.LastEditedBy, p.ValidFrom, p.ValidTo
-                  FROM
-                      " . $this->table_name . " p
-                  JOIN suppliers s ON p.SupplierID = s.SupplierID
-                  JOIN colors c ON p.ColorID = c.ColorID
-                  JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
-                  JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
-                  LIMIT $limit";
-
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-
-        return $stmt;
     }
 }
 

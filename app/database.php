@@ -20,9 +20,18 @@ class Database {
      * Dit is het globale database connectie object.<br /><br />
      *
      * Verkrijg het via `getConnection()`.
+     *
+     * @var PDO
      */
     private static $connection = null;
 
+    /**
+     * Verkrijg het globale database connectie object.<br /><br />
+     *
+     * De connectie wordt aangemaakt als hij nog niet beschikbaar is.
+     *
+     * @return PDO
+     */
     public static function getConnection() {
         // Als de connectie nog niet gemaakt is
         if (self::$connection == null) {

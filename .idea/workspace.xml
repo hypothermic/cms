@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Zet database.php om naar een singleton">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/v1/categorie/get.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/categorie/get.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/v1/product/get.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product/get.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/databaseobject.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,7 +108,7 @@
       <workItem from="1570549094805" duration="247000" />
       <workItem from="1572620841952" duration="19260000" />
       <workItem from="1572803298741" duration="7000" />
-      <workItem from="1573063431466" duration="1314000" />
+      <workItem from="1573063431466" duration="3382000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -182,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572721100070</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Zet database.php om naar een singleton">
+      <created>1573064812655</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1573064812655</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +227,7 @@
     <MESSAGE value="Bovenste navigatiebalk" />
     <MESSAGE value="Push flexbox items in navigatie-site naar correcte plaats" />
     <MESSAGE value="Maak een template van de header zodat we hem kunnen hergebruiken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maak een template van de header zodat we hem kunnen hergebruiken" />
+    <MESSAGE value="Zet database.php om naar een singleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zet database.php om naar een singleton" />
   </component>
 </project>

@@ -1,8 +1,26 @@
 <?php
 
-//include_once "../databaseobject.php";
+class Categorie {
 
-class Categorie extends DatabaseObject {
+    public const TABLE_NAME = "stockgroups";
+
+    /**
+     * Leest alle categorieeen uit de database.
+     *
+     * @param PDO $database
+     * @return PDOStatement
+     */
+    public static function read($database) {
+        $query = "SELECT
+                      c.StockGroupID, c.StockGroupName, c.LastEditedBy, c.ValidFrom, C.ValidTo
+                  FROM
+                      " . self::TABLE_NAME . " c";
+
+        $stmt = $database->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
 
     /** Interne ID van deze categorie */
     public $StockGroupID;
@@ -13,20 +31,8 @@ class Categorie extends DatabaseObject {
     protected $ValidFrom;
     protected $ValidTo;
 
-    public function __construct($db) {
-        parent::__construct($db, "stockgroups");
-    }
+    public function __construct() {
 
-    public function read() {
-        $query = "SELECT
-                      c.StockGroupID, c.StockGroupName, c.LastEditedBy, c.ValidFrom, C.ValidTo
-                  FROM
-                      " . $this->table_name . " c";
-
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-
-        return $stmt;
     }
 }
 
