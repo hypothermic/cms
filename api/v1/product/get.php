@@ -13,9 +13,10 @@ header("Content-Type: application/json; charset=UTF-8");
 // Verkrijg database connectie object.
 $database = Database::getConnection();
 
-// Dit gebeurt als de database niet online is, of ./db/setup.sql nog niet uitgevoerd is.
+// Check if de database connectie nog werkt.
+// Als de database niet online is, of ./db/setup.sql nog niet uitgevoerd is, dan wordt er een standaard error gegeven.
 // Om de exacte oorzaak te achterhalen, zet IS_DEBUGGING_ENABLED aan in constants.php!
-if (is_null($database)) {
+if (is_null($database) || !Database::isConnectionValid($database)) {
     respond_error(503, "Error connecting with database.");
 }
 

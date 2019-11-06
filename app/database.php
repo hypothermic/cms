@@ -59,6 +59,51 @@ class Database {
     }
 
     /**
+     * Deze functie checkt of een PDO database connectie nog werkt / actief is.
+     *
+     * @param PDO $database Connectie object.
+     * @param bool $retry Als hij niet werkt, zullen we hem proberen te herstellen?
+     * @return bool
+     */
+    public static function isConnectionValid($database, $retry = TRUE) {
+        if ($database == null) {
+            return FALSE;
+        }
+
+        try {
+            // Zorg dat hij een exception geeft als de testquery niet lukt.
+            self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Voer de testquery uit.
+            $database->query("SELECT 1");
+
+            // Success! Reset nu de error mode naar de default. (zie opmerkingen bij getConnection() hierover voor meer info).
+            if (IS_DEBUGGING_ENABLED) {
+                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } else {
+                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+            }
+
+            // Return dat het goed is gegaan.
+            return TRUE;
+        } catch (PDOException $exception) {
+            // Als er de optie is om nog een keer te proberen, maak een nieuwe connectie aan en check opnieuw.
+            if ($retry) {
+                // Reset de connectie.
+                self::$connection = null;
+                $database = self::getConnection();
+
+                // Check opnieuw met de nieuwe connectie, en return het resultaat de nieuwe check.
+                return self::isConnectionValid($database, FALSE);
+            } else {
+                // Connectie werkt niet meer. Meld het in de log.
+                error_log("Connection error: " . $exception->getMessage());
+                return FALSE;
+            }
+        }
+    }
+
+    /**
      * Van deze klasse mogen geen instanties gemaakt worden, dus maak de constructor privé.
      */
     private function __construct() {
