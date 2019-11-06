@@ -9,9 +9,8 @@ include_once '../../../app/model/product.php';
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-// instantiate database and product object
-$database = new Database();
-$db = $database->getConnection();
+// Verkrijg database connectie object.
+$db = Database::getConnection();
 
 // als database niet online is, of ./db/setup.sql nog niet uitgevoerd is.
 if (is_null($db)) {

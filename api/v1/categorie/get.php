@@ -9,10 +9,11 @@ include_once '../../../app/model/categorie.php';
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-// instantiate database and product object
-$database = new Database();
-$db = $database->getConnection();
+// Verkrijg database connectie object.
+$db = Database::getConnection();
 
+// als database niet online is, of ./db/setup.sql nog niet uitgevoerd is.
+// om de exacte oorzaak te achterhalen, zet IS_DEBUGGING_ENABLED aan in constants.php!
 if (is_null($db)) {
     respond_error(503, "Error connecting with database.");
 }

@@ -24,7 +24,7 @@
     <div id="navigatie-categorieen">
         <?php
             // Verkrijg categorieen uit database
-            $stmt = (new Categorie((new Database())->getConnection()))->read();
+            $stmt = (new Categorie(Database::getConnection()))->read();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 extract($row);
                 // Print een HTML element met de naam en een link naar de pagina
