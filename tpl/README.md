@@ -16,3 +16,8 @@ Typ het volgende ergens in de pagina body:
 ?>
 ```
 Nu komt de volledige header code uit de template in in plaats van de vorige code te staan.
+
+## Waarschuwing
+
+BEGIN ELKE TEMPLATE MET EEN div OF ANDER CONTAINER ELEMENT ZODAT WE MAKKELIJKER KUNNEN DEBUGGEN
+(EN VERGEET NIET TE SLUITEN ANDERS GAAT DE HELE PAGINA NAAR DE TERING)
