@@ -58,8 +58,10 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                 ?>
 
-            </div>
-
+            </div class="footer">
+            <?php
+             include("tpl/footer_template.php");
+            ?>
         </div>
     </body>
 </html>
