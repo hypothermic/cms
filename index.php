@@ -49,14 +49,32 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
             <!-- Inhoud pagina -->
             <div class="content-container">
-
                 <?php
+                    if(isset($_POST['knop'])) {
+                        $zoekterm = $_POST['search'];
+                        $stmt = (Product::read(Database::getConnection(), 5));
+                        $query = "SELECT
+                              p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
+                              p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
+                              p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
+                                  p.LastEditedBy, p.ValidFrom, p.ValidTo
+                              FROM
+                                  " . self::TABLE_NAME . " p
+                              JOIN suppliers s ON p.SupplierID = s.SupplierID
+                              JOIN colors c ON p.ColorID = c.ColorID
+                              JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
+                              JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                            LIMIT $limit";
 
-                // Vul ff tijdelijk met line breaks zodat we kunnen scrollen
-                for ($i = 0; $i < 100; $i++) {
-                    print ("<br />");
-                }
-
+                        $stmt = $database->prepare($query);
+                        $stmt->execute();
+                        return $stmt;
+                        /*
+                         * HELP????
+                         * Hier moet ik nog uitvinden hoe de fok ik een PDO connectie moet maken,
+                        Als iemand hier even naar zou willen kijken (Matthijs denk ik) dan ga ik er morgen mee verder.
+                        Nu moet ik bier drinken joejoe */
+                    }
                 ?>
         </div>
         <div class="footer-container">
