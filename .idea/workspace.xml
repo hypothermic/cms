@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/footer_header.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/footer_header.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/footer_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/footer_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +113,7 @@
       <workItem from="1572620841952" duration="19260000" />
       <workItem from="1572803298741" duration="7000" />
       <workItem from="1573063431466" duration="4718000" />
-      <workItem from="1573646340708" duration="1379000" />
+      <workItem from="1573646340708" duration="1780000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -263,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573646867616</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="CSS geüpdate">
+      <created>1573647826724</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1573647826724</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +305,7 @@
     <MESSAGE value="Zet database.php om naar een singleton" />
     <MESSAGE value="Zet read() functies in model om naar static functions" />
     <MESSAGE value="oinjkl" />
-    <option name="LAST_COMMIT_MESSAGE" value="oinjkl" />
+    <MESSAGE value="CSS geüpdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS geüpdate" />
   </component>
 </project>

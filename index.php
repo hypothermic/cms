@@ -21,7 +21,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
         <!-- Normalize hebben we nodig voor het schoonmaken van pagina zodat het er in alle browsers hetzelfde uit ziet -->
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/main.css.php">
-        <link rel="stylesheet" type="text/css" href="css/footer_header.css.php">
+        <link rel="stylesheet" type="text/css" href="css/header_footer.css.php">
 
         <!-- Alle JavaScript dependencies-->
         <script src="js/vendor/modernizr-3.7.1.min.js"></script>

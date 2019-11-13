@@ -1,3 +1,4 @@
+/*Hier onder is de css van de header, daarna komt de css van de footer
 /* Voeg hier CSS toe */
 
 <?php
@@ -172,6 +173,10 @@ header('Content-Type: text/css');
 }
 /* Net zoals flex-push alleen worden items op 50% gezet.*/
 .flex-center {
-    margin-left: auto;
+    margin- left: auto;
     margin-right: auto;
 }
+
+/* Hier begint de css van de footer
+ */
+
