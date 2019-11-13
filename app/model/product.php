@@ -1,7 +1,5 @@
 <?php
 
-include_once '../constants.php';
-
 class Product {
 
     public const TABLE_NAME = "stockitems";
