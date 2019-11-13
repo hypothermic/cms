@@ -13,7 +13,7 @@
        <!-- De container beperkt de items tot 70% van de schermbreedte-->
         <div id="navigatie-site-container" class="responsive-container">
             <a href="index.php"><div>Home</div></a>
-            <a href="index.php" class="flex-center" style="color: red"><div>Moet hier de zoekbalk ofzo?</div></a>
+            <a><input type="text" placeholder="Typ om te zoeken" name="search" id="search"><div></div></a>
             <a href="winkelmand.php" class="flex-push"><div>Winkelmandje</div></a>
             <a href="inloggen.php"><div>Inloggen</div></a>
             <a href="registreren.php"><div>Registreren</div></a>
