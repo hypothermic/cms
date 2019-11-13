@@ -6,7 +6,7 @@
         <div id="promotie">
              <img src="img/logo/small-250x90.png" alt="Logo">
         </div>
-    </div>
+     </div>
 
     <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
     <div id="navigatie-site">
