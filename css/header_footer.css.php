@@ -105,6 +105,11 @@ header('Content-Type: text/css');
     text-align: center;
     text-decoration: none;
 }
+#search{
+    margin-left: 5vw;
+    width: 20vw;
+    padding: 0.7rem 1.6rem;
+}
 
 /* ---- utils ---- */
 
@@ -176,10 +181,7 @@ header('Content-Type: text/css');
     margin- left: auto;
     margin-right: auto;
 }
-#search{
-    width: 20vw;
-    padding: 0.7rem 1.6rem;
-}
+
 
 /* Hier begint de css van de footer
  */
