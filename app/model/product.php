@@ -66,6 +66,7 @@ class Product {
                   JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
                   WHERE p.StockItemName LIKE '%$zoekterm%'
+                  
                   LIMIT $limit";
 
         $stmt = $database->prepare($query);
