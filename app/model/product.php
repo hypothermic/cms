@@ -38,7 +38,41 @@ class Product {
 
         return $stmt;
     }
+    /**
+     * Leest alle producten uit de database.
+     *
+     * @param PDO $database
+     * @param int $limit Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     * @return PDOStatement
+     */
+    public static function zoek($database, $limit = 1000) {
+        // Als limiet geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
+        if (filter_var($limit, FILTER_VALIDATE_INT) === false
+            || $limit < MIN_PRODUCT_RETURN_AMOUNT
+            || $limit > MAX_PRODUCT_RETURN_AMOUNT) {
 
+            $limit = DEFAULT_PRODUCT_RETURN_AMOUNT;
+        }
+
+        $query = "SELECT
+                      p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
+                      p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
+                      p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
+                      p.LastEditedBy, p.ValidFrom, p.ValidTo
+                  FROM
+                      " . self::TABLE_NAME . " p
+                  JOIN suppliers s ON p.SupplierID = s.SupplierID
+                  JOIN colors c ON p.ColorID = c.ColorID
+                  JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
+                  JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  WHERE p.StockItemName LIKE '%$zoekterm%'
+                  LIMIT $limit";
+
+        $stmt = $database->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
     /** Interne ID van dit product*/
     public $StockItemID;
     /** Naam van dit product*/

@@ -3,6 +3,7 @@
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
 ?>
 
 <!doctype html>
@@ -49,10 +50,26 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
             <!-- Inhoud pagina -->
             <div class="content-container">
+                <?php
+                // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
+                // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
+                $stmt = (Product::read(Database::getConnection(), 5));
 
+                // Per rij die we uit de database halen voeren we een stukje code uit
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
+                extract($row);
+
+                // Print een HTML element met de gegevens uit deze rij
+                print("<p>Product ID: " . $StockItemID . " , naam: " . $StockItemName ."</p>");
+
+                }
+                ?>
             </div>
 
         </div>
+
         <div class="footer-container">
             <?php
             //    include("tpl/footer_template.php");

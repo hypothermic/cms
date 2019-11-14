@@ -60,7 +60,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
                     // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
-                    $stmt = (Product::read(Database::getConnection(), 5));
+                    $stmt = (Product::zoek(Database::getConnection(), 5));
 
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -84,7 +84,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
         </div>
         <div class="footer-container">
             <?php
-                include("tpl/footer_template.php");
+               // include("tpl/footer_template.php");
             ?>
 
         </div>
