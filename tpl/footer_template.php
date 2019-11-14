@@ -25,7 +25,7 @@
         </div>
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a <!-- Hier moet een href komen met een mailadres -->>><emailadres></a></p>
+            <p><a <!-- Hier moet een href komen met een mailadres -->>>></a>emailadres</a></p>
         </div>
     </div>
     <div class="footer-right">
