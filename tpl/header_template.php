@@ -12,7 +12,6 @@
     <div id="navigatie-site">
        <!-- De container beperkt de items tot 70% van de schermbreedte-->
         <div id="navigatie-site-container" class="responsive-container">
-            <a href="index.php"><div>Home</div></a>
             <form action="search.php" name="zoekForm" method="post">
                 <a><input type="text" placeholder="Typ om te zoeken" name="search" id="search"><div></div></a>
                 <a><input type="submit" value="Search" name="knop" </a>
