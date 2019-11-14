@@ -60,9 +60,11 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
                 // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
                 extract($row);
-
+                print($StockItemName . "<br>");
+                print($StockItemID . "<br>");
+                print('<img src="$Photo'.base64_encode($Photo).'"/>');
                 // Print een HTML element met de gegevens uit deze rij
-                print("<p>Product ID: " . $StockItemID . " , naam: " . $StockItemName ."</p>");
+               //print("<p>Product ID: " . $StockItemID . " , naam: " . $StockItemName ."</p>");
 
                 }
                 ?>
