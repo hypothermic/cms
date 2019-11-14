@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Fill images script">
-      <change afterPath="$PROJECT_DIR$/db/ditisjob.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/fill_imgs.php" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -313,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573738470545</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fill images script">
+      <created>1573741572759</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1573741572759</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +357,8 @@
     <MESSAGE value="Zoekbalk ding" />
     <MESSAGE value="joejoe" />
     <MESSAGE value="Search dingen gefixt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search dingen gefixt" />
+    <MESSAGE value="Fill images script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fill images script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
