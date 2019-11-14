@@ -45,7 +45,7 @@ class Product {
      * @param int $limit Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
      * @return PDOStatement
      */
-    public static function zoek($database, $limit = 1000) {
+    public static function zoek($database, $limit = 1000, $zoekterm) {
         // Als limiet geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
         if (filter_var($limit, FILTER_VALIDATE_INT) === false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT

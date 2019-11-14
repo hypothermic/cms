@@ -60,7 +60,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
                     // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
-                    $stmt = (Product::zoek(Database::getConnection(), 5));
+                    $stmt = (Product::zoek(Database::getConnection(), 10, $zoekterm));
 
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -68,8 +68,11 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
                         extract($row);
 
-                        // Print een HTML element met de gegevens uit deze rij
-                        print("<p>Product ID: " . $StockItemID . " , naam: " . $StockItemName ."</p>");
+
+                        //Laat alle zoekresultaten zien
+                        print('<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAwBAMAAACh2TSJAAAALVBMVEUAAADtNTX////3n5/+9fX719f7zMz5tLTzfHzuQED//f31jY3ybGzxXV3wVFRaxp+rAAAAAXRSTlMAQObYZgAAALVJREFUOMut0rENAjEQRNHdC4kY0QBaAQUQX0QAFSAKIKQEKiAA6VqgIkriApuV1x7pQPz0aWwHljLMpZ0CRDBGoXmeghGYKFJsUo90giAImCgV5OJF+oOgKE48MlGgs2VLBIunWesw0a1ZHqF82c7GmmIfUSpgotOly29DFPFJFDEhkgIT/V5mZuvj6XofKrHU6vyI4u37IYi36aN4h5tL7PJyif1dvCgEpapzISbCTEj5R78BZq5A5Ldh2XYAAAAASUVORK5CYII">');
+                        print("<br>");
+                        print($StockItemName . "<br>");
 
                     }
 

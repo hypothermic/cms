@@ -60,11 +60,12 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
                 // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
                 extract($row);
-                print($StockItemName . "<br>");
-                print($StockItemID . "<br>");
-                print('<img src="$Photo'.base64_encode($Photo).'"/>');
-                // Print een HTML element met de gegevens uit deze rij
-               //print("<p>Product ID: " . $StockItemID . " , naam: " . $StockItemName ."</p>");
+
+                // Laat de resultaten zien van read();
+                    print('<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAwBAMAAACh2TSJAAAALVBMVEUAAADtNTX////3n5/+9fX719f7zMz5tLTzfHzuQED//f31jY3ybGzxXV3wVFRaxp+rAAAAAXRSTlMAQObYZgAAALVJREFUOMut0rENAjEQRNHdC4kY0QBaAQUQX0QAFSAKIKQEKiAA6VqgIkriApuV1x7pQPz0aWwHljLMpZ0CRDBGoXmeghGYKFJsUo90giAImCgV5OJF+oOgKE48MlGgs2VLBIunWesw0a1ZHqF82c7GmmIfUSpgotOly29DFPFJFDEhkgIT/V5mZuvj6XofKrHU6vyI4u37IYi36aN4h5tL7PJyif1dvCgEpapzISbCTEj5R78BZq5A5Ldh2XYAAAAASUVORK5CYII">');
+                    print($StockItemName . "<br>");
+
+
 
                 }
                 ?>
