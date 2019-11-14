@@ -2,6 +2,7 @@
 // Uit deze php bestanden gebruiken wij functies of variabelen:
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
+include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 ?>
 
@@ -49,6 +50,34 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
             <!-- Inhoud pagina -->
             <div class="content-container">
+
+                <?php
+
+                // Check NIET of de knop geset is, maar of de zoekterm geset is want dat is wat we nodig hebben. Als namelijk de knop wel geset is maar de zoekterm niet crasht hij! -M
+                if(isset($_POST['search'])) {
+                    $zoekterm = $_POST['search']; // oh btw we moeten SQL-injectie voorkomen...
+
+
+                    // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
+                    // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
+                    $stmt = (Product::read(Database::getConnection(), 5));
+
+                    // Per rij die we uit de database halen voeren we een stukje code uit
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                        // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
+                        extract($row);
+
+                        // Print een HTML element met de gegevens uit deze rij
+                        print("<p>Product ID: " . $StockItemID . " , naam: " . $StockItemName ."</p>");
+
+                    }
+
+                } else {
+                    print("Geen zoekterm opgegeven!!!!");
+                }
+
+                ?>
 
             </div>
 
