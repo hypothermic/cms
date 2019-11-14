@@ -40,6 +40,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 include("tpl/header_template.php");
 ?>
 
+<!--Simpele tekst voor de 404 page not found met een knop om terug te gaan naar de homepage-->
 <div  style="text-align: center">
     <h1 >Pagina niet gevonden</h1>
     <p>Sorry,er wordt hier aan gewerkt. Klik op een categorie of ga terug naar de homepagina.</p><br><br>
