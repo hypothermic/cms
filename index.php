@@ -3,6 +3,7 @@
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
 ?>
 
 <!doctype html>
@@ -52,23 +53,12 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                 <?php
                     if(isset($_POST['knop'])) {
                         $zoekterm = $_POST['search'];
-                        $stmt = (Product::read(Database::getConnection(), 5));
-                        $query = "SELECT
-                              p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
-                              p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
-                              p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
-                                  p.LastEditedBy, p.ValidFrom, p.ValidTo
-                              FROM
-                                  " . self::TABLE_NAME . " p
-                              JOIN suppliers s ON p.SupplierID = s.SupplierID
-                              JOIN colors c ON p.ColorID = c.ColorID
-                              JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
-                              JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
-                            LIMIT $limit";
-
-                        $stmt = $database->prepare($query);
-                        $stmt->execute();
-                        return $stmt;
+                        $stmt = (Product::read(Database::getConnection()));
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            extract($row);
+                            // Print een HTML element met de naam en een link naar de pagina
+                            printf();
+                        }
                         /*
                          * HELP????
                          * Hier moet ik nog uitvinden hoe de fok ik een PDO connectie moet maken,
