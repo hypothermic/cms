@@ -15,7 +15,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
         <title><?php echo VENDOR_NAME ?></title>
         <meta name="description" content="<?php echo VENDOR_DESCRIPTION ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="<?php echo VENDOR_THEME_COLOR_PRIMARY?>">
+        <meta name="theme-color" content="<?php echo VENDOR_THEME_COLOR_PRIMARY ?>">
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
 
@@ -53,19 +53,18 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                 <?php
 
-                // Check NIET of de knop geset is, maar of de zoekterm geset is want dat is wat we nodig hebben. Als namelijk de knop wel geset is maar de zoekterm niet crasht hij! -M
-                if(isset($_POST['search'])) {
-                    $zoekterm = $_POST['search']; // oh btw we moeten SQL-injectie voorkomen...
+                // Check of er een zoekterm is opgegeven in de URL
+                if (isset($_GET['search'])) {
+                    $zoekterm = $_GET['search'];
 
-
-                    // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
-                    // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
-                    $stmt = (Product::zoek(Database::getConnection(), 10, $zoekterm));
+                    // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, 10));
 
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                        // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
+                        // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
+                        // (bijv. kolom "StockItemName" kunne we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
                         extract($row);
 
 

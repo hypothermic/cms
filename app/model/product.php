@@ -7,8 +7,9 @@ class Product {
     /**
      * Leest alle producten uit de database.
      *
-     * @param PDO $database
-     * @param int $limit Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     * @param PDO      $database   Een database connectie object (verkrijg met Database::getConnectie();)
+     * @param int      $limit      Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     *
      * @return PDOStatement
      */
     public static function read($database, $limit = 1000) {
@@ -31,22 +32,30 @@ class Product {
                   JOIN colors c ON p.ColorID = c.ColorID
                   JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
-                  LIMIT $limit";
+                  LIMIT :limiet";
 
         $stmt = $database->prepare($query);
+
+        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":limiet",   $limit,    PDO::PARAM_INT);
+
+        // Voer de query uit
         $stmt->execute();
 
         return $stmt;
     }
+
     /**
-     * Leest alle producten uit de database.
+     * Zoekt in de product tabel naar $zoekterm.
      *
-     * @param PDO $database
-     * @param int $limit Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     * @param PDO      $database   Een database connectie object (verkrijg met Database::getConnectie();)
+     * @param string   $zoekterm   Waar je op wilt zoeken
+     * @param int      $limit      Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     *
      * @return PDOStatement
      */
-    public static function zoek($database, $limit = 1000, $zoekterm) {
-        // Als limiet geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
+    public static function zoek($database, $zoekterm, $limit = 1000) {
+        // Als $limit geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
         if (filter_var($limit, FILTER_VALIDATE_INT) === false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
             || $limit > MAX_PRODUCT_RETURN_AMOUNT) {
@@ -65,14 +74,24 @@ class Product {
                   JOIN colors c ON p.ColorID = c.ColorID
                   JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
-                  WHERE p.StockItemName LIKE '%$zoekterm%'
-                  LIMIT $limit";
+                  WHERE p.StockItemName LIKE :zoekterm
+                  LIMIT :limiet";
 
         $stmt = $database->prepare($query);
+
+        // Zet wildcards aan het begin en eind van de zoekterm
+        $zoekterm = "%" . $zoekterm . "%";
+
+        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":zoekterm", $zoekterm, PDO::PARAM_STR);
+        $stmt->bindValue(":limiet",   $limit,    PDO::PARAM_INT);
+
+        // Voer de query uit
         $stmt->execute();
 
         return $stmt;
     }
+
     /** Interne ID van dit product*/
     public $StockItemID;
     /** Naam van dit product*/

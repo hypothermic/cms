@@ -1,8 +1,5 @@
-/* <1> Deze code zorgt er voor dat de navigatiebalk blijft "plakken" aan de bovenkant van het scherm */
+/* --- Deze code zorgt er voor dat de navigatiebalk blijft "plakken" aan de bovenkant van het scherm */
 document.addEventListener("DOMContentLoaded", function () {
-    window.onscroll = function() {
-        onNavScroll()
-    };
 
     /**
      * Functie om de offset van element naar pagina top in pixels te bepalen
@@ -29,6 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
             navigatiebalk.classList.remove("stick");
         }
     }
+
+    // Elke keer dat de gebruiker scrollt wordt de onNavScroll() functie opgeroepen
+    window.onscroll = function() {
+        onNavScroll()
+    };
+    
 });
-/* </1> */
+/* --- */
 

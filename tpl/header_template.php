@@ -12,7 +12,7 @@
     <div id="navigatie-site">
        <!-- De container beperkt de items tot 70% van de schermbreedte-->
         <div id="navigatie-site-container" class="responsive-container">
-            <form action="search.php" name="zoekForm" method="post">
+            <form action="search.php" name="zoekForm" method="get">
                 <a><input type="text" placeholder="Typ om te zoeken" name="search" id="search"><div></div></a>
                 <a><input type="submit" value="Search" name="knop" </a>
             </form>
@@ -24,11 +24,17 @@
     <!-- Navigatie balk met categorieen -->
     <div id="navigatie-categorieen">
         <?php
-            // Verkrijg categorieen uit database
+            // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
             $stmt = (Categorie::read(Database::getConnection()));
+
+            // Per rij die we uit de database halen voeren we een stukje code uit
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
+                // (bijv. kolom "StockItemName" kunne we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
                 extract($row);
-                // Print een HTML element met de naam en een link naar de pagina
+
+                // Print een HTML element met de naam en een link naar de pagina (de %s worden vervangen door de variabelen na de komma)
                 printf("<a href=\"categorie.php?id=%s\"><div>%s</div></a>", $StockGroupID, $StockGroupName);
             }
         ?>
