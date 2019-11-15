@@ -34,8 +34,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
+        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
     </option>
@@ -46,7 +46,6 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
