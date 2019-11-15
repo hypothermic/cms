@@ -4,7 +4,7 @@
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +113,7 @@
       <workItem from="1572803298741" duration="7000" />
       <workItem from="1573063431466" duration="4718000" />
       <workItem from="1573646340708" duration="7558000" />
-      <workItem from="1573816198036" duration="155000" />
+      <workItem from="1573816198036" duration="2829000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -318,7 +318,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573741572759</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Volgorde van wat je ziet aangepast + prijs toegevoegd">
+      <created>1573816441522</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1573816441522</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Volgorde van wat je ziet aangepast + prijs toegevoegd">
+      <created>1573816447837</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1573816447837</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +373,8 @@
     <MESSAGE value="joejoe" />
     <MESSAGE value="Search dingen gefixt" />
     <MESSAGE value="Fill images script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fill images script" />
+    <MESSAGE value="Volgorde van wat je ziet aangepast + prijs toegevoegd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Volgorde van wat je ziet aangepast + prijs toegevoegd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

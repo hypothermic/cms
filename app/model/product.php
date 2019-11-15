@@ -45,7 +45,7 @@ class Product {
      * @param int $limit Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
      * @return PDOStatement
      */
-    public static function zoek($database, $limit = 1000, $zoekterm) {
+    public static function zoek($database, $zoekterm, $limit = 1000) {
         // Als limiet geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
         if (filter_var($limit, FILTER_VALIDATE_INT) === false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
@@ -66,6 +66,7 @@ class Product {
                   JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
                   WHERE p.StockItemName LIKE '%$zoekterm%'
+                  /*ORDER BY $ OrderBy $ AscDesc*/
                   LIMIT $limit";
 
         $stmt = $database->prepare($query);
