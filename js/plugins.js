@@ -1,4 +1,4 @@
-// Avoid `console` errors in browsers that lack a console.
+// Deze code zorgt er voor dat er geen errors komen in browsers zonder console
 (function() {
   var method;
   const noop = function () {};

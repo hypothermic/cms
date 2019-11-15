@@ -1,11 +1,12 @@
 <?php
+
 // Uit deze php bestanden gebruiken wij functies of variabelen:
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 
 // Deze pagina vereist een GET parameter: "id" met integer value van het product.
-// Als deze param niet meegegeven wordt sturen we de user terug naar index.php
+// Als deze param niet meegegeven is sturen we de user terug naar index.php
 if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) === false) {
     header("Location: index.php");
 }
@@ -61,10 +62,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) === fals
 
                 <?php
 
-                // Vul ff tijdelijk met line breaks zodat we kunnen scrollen
-                for ($i = 0; $i < 100; $i++) {
-                    print ("<br />");
-                }
+                    // TODO ------ HIER MOET DE INHOUD VAN PRODUCT PAGINA KOMEN!!!!!!!
 
                 ?>
         </div>
@@ -72,7 +70,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) === fals
 
             <!-- Print de footer (contact info, etc.) -->
             <?php
-                include("tpl/footer_template.php");
+                // include("tpl/footer_template.php");
             ?>
 
         </div>

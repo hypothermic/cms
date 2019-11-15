@@ -1,15 +1,14 @@
 /*Hier onder is de css van de header, daarna komt de css van de footer
-/* Voeg hier CSS toe */
 
 <?php
 // Geef aan dat dit als CSS geintepreteerd moet worden
 header('Content-Type: text/css');
 
 // Uit vendor.php zijn we de constanten nodig.
-   include_once "../app/vendor.php";
+include_once "../app/vendor.php";
 ?>
 
-     /* Dit is de gehele header area, "promotie" en "navigatie" vallen hierbinnen. */
+/* Dit is de gehele header area, "promotie" en "navigatie" vallen hierbinnen. */
  #header {
      background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
  }
@@ -45,10 +44,12 @@ header('Content-Type: text/css');
     float: right;
 }
 
+/* Deze regels gelden op "#navigatie-site-container" als de gebruiker er met de muis bovenop gaat*/
 #navigatie-site-container div:hover {
     background: <?php echo VENDOR_THEME_COLOR_PRIMARY ?>;
 }
 
+/* Dit geldt voor alle linkjes in de navigatiebalk */
 #navigatie-site-container a {
     height: 100%;
 
@@ -90,6 +91,7 @@ header('Content-Type: text/css');
     float: left;
 }
 
+/* Deze regels gelden op "#navigatie-categorieen" als de gebruiker er met de muis bovenop gaat*/
 #navigatie-categorieen div:hover {
     background: <?php echo VENDOR_THEME_COLOR_SECONDARY ?>;
 }
@@ -98,6 +100,7 @@ header('Content-Type: text/css');
     background: <?php echo VENDOR_THEME_COLOR_SECONDARY ?>;
 }*/
 
+/* Dit geldt voor alle linkjes in de navigatiebalk */
 #navigatie-categorieen a {
     height: 100%;
 
@@ -105,7 +108,9 @@ header('Content-Type: text/css');
     text-align: center;
     text-decoration: none;
 }
-#search{
+
+/* Dit is de zoekbalk */
+#search {
     margin-left: 5vw;
     width: 20vw;
     padding: 0.7rem 1.6rem;

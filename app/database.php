@@ -10,10 +10,24 @@ include_once "constants.php";
  */
 class Database {
 
+    /**
+     * De URL naar de MySQL server waar de database is (localhost betekent op je eigen laptop)
+     */
     private const HOST = "localhost";
+
+    /**
+     * De naam van de database
+     */
     private const DATABASE = "wideworldimporters";
 
+    /**
+     * De gebruiker waarmee je in de database server inlogt
+     */
     private const USERNAME = "api-local";
+
+    /**
+     * Het wachtwoord voor de bovenstaande gebruiker.
+     */
     private const PASSWORD = "";
 
     /**
@@ -35,18 +49,21 @@ class Database {
     public static function getConnection() {
         // Als de connectie nog niet gemaakt is
         if (self::$connection == null) {
+
             // Gooi dit in een try-catch blok omdat PDO exceptions geeft
             try {
                 // Verbind met de database via PDO
                 self::$connection = new PDO("mysql:host=" . Database::HOST . ";dbname=" . Database::DATABASE, Database::USERNAME, Database::PASSWORD);
-                // MySQL werkt default met ASCII dus geef aan dat we UTF-8 willen gebruiken.
+
+                // MySQL werkt default met de ASCII character set dus geef aan dat we UTF-8 willen gebruiken.
                 self::$connection->exec("set names utf8");
+
             } catch (PDOException $exception) {
-                // Als de database server uit staat of ./db/setup.sql nog niet is gerund
+                // Dit gebeurt als de database server uit staat of ./db/setup.sql nog niet is gerund
                 error_log("Connection error: " . $exception->getMessage());
             }
 
-            // Als de debug modus aan staat, laat alle exceptions zien aan de gebruiker, anders niet.
+            // Als de debug modus aan staat, laat alle PDO exceptions zien aan de gebruiker, anders niet.
             if (IS_DEBUGGING_ENABLED) {
                 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } else {
@@ -61,8 +78,9 @@ class Database {
     /**
      * Deze functie checkt of een PDO database connectie nog werkt / actief is.
      *
-     * @param PDO $database Connectie object.
-     * @param bool $retry Als hij niet werkt, zullen we hem proberen te herstellen?
+     * @param PDO      $database   Database connectie object.
+     * @param bool     $retry      Als hij niet werkt, zullen we hem proberen te herstellen?
+     *
      * @return bool
      */
     public static function isConnectionValid($database, $retry = TRUE) {
@@ -72,29 +90,32 @@ class Database {
 
         try {
             // Zorg dat hij een exception geeft als de testquery niet lukt.
-            self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Voer de testquery uit.
             $database->query("SELECT 1");
 
             // Success! Reset nu de error mode naar de default. (zie opmerkingen bij getConnection() hierover voor meer info).
             if (IS_DEBUGGING_ENABLED) {
-                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } else {
-                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+                $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
             }
 
             // Return dat het goed is gegaan.
             return TRUE;
+
         } catch (PDOException $exception) {
             // Als er de optie is om nog een keer te proberen, maak een nieuwe connectie aan en check opnieuw.
             if ($retry) {
+
                 // Reset de connectie.
                 self::$connection = null;
                 $database = self::getConnection();
 
                 // Check opnieuw met de nieuwe connectie, en return het resultaat de nieuwe check.
                 return self::isConnectionValid($database, FALSE);
+
             } else {
                 // Connectie werkt niet meer. Meld het in de log.
                 error_log("Connection error: " . $exception->getMessage());

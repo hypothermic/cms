@@ -51,7 +51,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
             <!-- Inhoud pagina -->
             <div class="content-container">
                 <?php
-                // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
+                // Alle SQL magie en PDO connectie shit gebeurt in `Product::read()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
                 // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
                 $stmt = (Product::read(Database::getConnection(), 5));
 
