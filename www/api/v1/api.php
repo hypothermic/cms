@@ -1,6 +1,6 @@
 <?php
 
-include_once "../../../config.php";
+include_once '../../app/vendor.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -8,8 +8,8 @@ header("Content-Type: application/json; charset=UTF-8");
 http_response_code(200);
 
 $client = array(
-    "name" => CLIENT_NAME,
-    "logo" => "img/logo/"
+    "name" => VENDOR_NAME,
+    "logo" => "img/logo/small-250x90.png"
 );
 
 $result = array(
