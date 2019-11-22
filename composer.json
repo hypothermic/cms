@@ -1,0 +1,23 @@
+{
+    "name": "hypothermic/fear",
+    "description": "Fear Content Management System",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hypothermic",
+            "email": "admin@hypothermic.nl"
+        }
+    ],
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "git@github.com:hypothermic/objectstorm.git"
+        }
+    ],
+
+    "minimum-stability": "dev",
+    "require": {
+        "hypothermic/objectstorm": "0.1"
+    }
+}

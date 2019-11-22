@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Let the internal API only return objects and the web API convert to json">
-      <change afterPath="$PROJECT_DIR$/fear/attributeobject.php" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fear/databaseobject.php" beforeDir="false" afterPath="$PROJECT_DIR$/fear/databaseobject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fear/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/fear/include.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/category/get.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/category/get.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +14,7 @@
   </component>
   <component name="ComposerSettings">
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -103,6 +100,14 @@
       <workItem from="1568803787256" duration="1697000" />
       <workItem from="1570903762669" duration="270000" />
       <workItem from="1570904033667" duration="89000" />
+      <workItem from="1571072051222" duration="1228000" />
+      <workItem from="1571331695932" duration="413000" />
+      <workItem from="1571582582271" duration="5000" />
+      <workItem from="1571765993367" duration="24000" />
+      <workItem from="1572114360001" duration="247000" />
+      <workItem from="1572134181299" duration="1615000" />
+      <workItem from="1574433525633" duration="1199000" />
+      <workItem from="1574448277330" duration="1968000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -146,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570921002187</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Attribute object">
+      <created>1571072075778</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571072075778</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +184,7 @@
     <MESSAGE value="Rebrand to Fear CMS" />
     <MESSAGE value="More rebranding stuff..." />
     <MESSAGE value="Let the internal API only return objects and the web API convert to json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Let the internal API only return objects and the web API convert to json" />
+    <MESSAGE value="Attribute object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attribute object" />
   </component>
 </project>

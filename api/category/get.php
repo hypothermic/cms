@@ -2,9 +2,6 @@
 
 use Fear\Model\Category;
 
-// When using this API, make sure everything is included! ex.:
-//include_once '../../fear/include.php';
-
 /**
  * @return Category[]
  */
